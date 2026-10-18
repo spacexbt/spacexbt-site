@@ -5,9 +5,6 @@ import { site } from "@/content/site";
 import { handleFromUrl } from "@/lib/content";
 import { delay } from "@/lib/motion";
 
-const pill =
-  "rounded-full border border-border bg-bg/60 px-3 py-1 font-mono text-xs font-medium text-muted backdrop-blur-sm";
-
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden py-14 md:py-24">
@@ -35,21 +32,8 @@ export function Hero() {
             {site.tagline}
           </p>
           <div
-            className="enter mt-6 flex flex-wrap items-center gap-2"
-            style={delay(240)}
-          >
-            <span className="mr-1 font-mono text-xs font-medium uppercase text-muted">
-              Builds with
-            </span>
-            {site.buildsWith.map((tool) => (
-              <span key={tool} className={pill}>
-                {tool}
-              </span>
-            ))}
-          </div>
-          <div
             className="enter mt-8 flex flex-wrap items-center gap-3"
-            style={delay(320)}
+            style={delay(240)}
           >
             <ExternalLink
               href={site.links.x}

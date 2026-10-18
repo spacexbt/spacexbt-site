@@ -104,7 +104,6 @@ const validSite = (overrides: Record<string, unknown> = {}) => ({
     telegramDm: "https://t.me/someperson",
     github: "https://github.com/someone",
   },
-  buildsWith: ["Tool"],
   ...overrides,
 });
 
@@ -132,9 +131,6 @@ describe("site schema", () => {
         }),
       ),
     ).toThrow();
-  });
-  it("rejects empty buildsWith entries", () => {
-    expect(() => parseSite(validSite({ buildsWith: [""] }))).toThrow();
   });
   it("rejects unknown key", () => {
     expect(() => parseSite(validSite({ extra: 1 }))).toThrow();

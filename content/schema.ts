@@ -46,7 +46,6 @@ export const siteSchema = z.strictObject({
     telegramDm: z.httpUrl(),
     github: z.httpUrl(),
   }),
-  buildsWith: z.array(z.string().min(1)).min(1),
 });
 
 export type Site = z.infer<typeof siteSchema>;
