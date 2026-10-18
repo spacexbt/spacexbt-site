@@ -1,0 +1,17 @@
+import { parseSite } from "@/content/schema";
+
+export const site = parseSite({
+  handle: "spacexbt",
+  title: "spacexbt",
+  tagline:
+    "Self-taught dev. On-chain research. Building with Claude Code and Kimi.",
+  description:
+    "Projects, tools and airdrop farms by spacexbt — self-taught developer and on-chain researcher.",
+  url: "https://spacexbt.vercel.app", // replace when a custom domain exists
+  links: {
+    x: "https://x.com/spacexbt",
+    telegram: "https://t.me/spaceinsights",
+    github: "https://github.com/spacexbt",
+  },
+  buildsWith: ["Claude Code", "Kimi"],
+});
