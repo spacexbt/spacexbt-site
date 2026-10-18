@@ -14,4 +14,14 @@ export const farms: Farm[] = parseFarms([
     note: "DEX for active pools: oracle-guided and PropAMM liquidity.",
     since: "2026-10",
   },
+  {
+    name: "Polymarket",
+    url: "https://polymarket.com",
+    chains: ["Polygon"],
+    status: "active",
+    logo: "/farms/polymarket.png",
+    referral: "https://polymarket.com/?r=space7",
+    note: "Prediction markets on real-world events.",
+    since: "2026-10",
+  },
 ]);

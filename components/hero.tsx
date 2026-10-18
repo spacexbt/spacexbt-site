@@ -19,7 +19,7 @@ export function Hero() {
       <div className="mx-auto max-w-[960px] px-5 sm:px-6">
         <div className="max-w-[720px]">
           <p className="enter font-mono text-xs font-medium uppercase tracking-wider">
-            <span className="shimmer">Self-taught dev · On-chain research</span>
+            <span className="shimmer">Self-taught dev · Onchain research</span>
           </p>
           <h1
             className="enter mt-4 text-[40px] font-semibold leading-tight tracking-tight md:text-[56px]"

@@ -1,3 +1,15 @@
+:root {
+  --grid-dot: #d6d3d1;
+  --glow-mix: 26%;
+  --spot-mix: 24%;
+}
+
+.dark {
+  --grid-dot: #2c2c31;
+  --glow-mix: 18%;
+  --spot-mix: 14%;
+}
+
 /* Load-time entrance: children set --d for stagger */
 @keyframes enter {
   from {
@@ -35,7 +47,7 @@
 }
 
 .dot-grid {
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: 22px 22px;
   mask-image: radial-gradient(
     ellipse 70% 60% at 30% 40%,
@@ -54,7 +66,7 @@
 .hero-glow {
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--accent) 18%, transparent),
+    color-mix(in srgb, var(--accent) var(--glow-mix), transparent),
     transparent 65%
   );
   animation: glow-float 12s ease-in-out infinite;
@@ -118,31 +130,6 @@
   transform: translateX(100%);
 }
 
-/* Infinite ticker strip */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee {
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 10%,
-    #000 90%,
-    transparent
-  );
-}
-
-.marquee-track {
-  animation: marquee 40s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 /* Cursor spotlight: MotionEffects writes --mx / --my on [data-spotlight] */
 [data-spotlight] {
   position: relative;
@@ -157,7 +144,7 @@
   border-radius: inherit;
   background: radial-gradient(
     360px circle at var(--mx, 50%) var(--my, 50%),
-    color-mix(in srgb, var(--accent) 10%, transparent),
+    color-mix(in srgb, var(--accent) var(--spot-mix), transparent),
     transparent 60%
   );
   opacity: 0;
@@ -204,6 +191,32 @@
   pointer-events: none;
 }
 
+/* A short light that glides along the footer's top border */
+@keyframes line-glide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(350%);
+  }
+}
+
+.footer-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: line-glide 9s ease-in-out infinite;
+}
+
 /* Underline that grows from the left on hover */
 .link-grow {
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px
@@ -223,7 +236,7 @@
   .hero-glow,
   .shimmer,
   .caret,
-  .marquee-track,
+  .footer-line::before,
   .border-beam::after {
     animation: none !important;
   }

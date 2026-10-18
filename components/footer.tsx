@@ -6,17 +6,22 @@ import { site } from "@/content/site";
 import { isPresentUrl } from "@/lib/content";
 
 const iconLink =
-  "inline-flex h-9 w-9 items-center justify-center rounded-md text-muted hover:text-text";
+  "inline-flex h-9 w-9 items-center justify-center rounded-md text-muted transition-transform duration-200 hover:-translate-y-0.5 hover:text-text";
 const icon = "h-[18px] w-[18px]";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-[960px] flex-col gap-3 px-5 py-8 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <footer className="footer-line border-t border-border">
+      <div
+        data-reveal
+        className="mx-auto flex max-w-[960px] flex-col gap-3 px-5 py-8 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6"
+      >
         <p>
           © {new Date().getFullYear()} {site.handle}
         </p>
-        <p>Built with Claude Code &amp; Kimi</p>
+        <p>
+          <span className="shimmer">Built with Claude Code &amp; Kimi</span>
+        </p>
         <div className="flex items-center gap-1">
           <ExternalLink
             href={site.links.x}

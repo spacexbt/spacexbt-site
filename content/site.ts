@@ -4,9 +4,9 @@ export const site = parseSite({
   handle: "spacexbt",
   title: "spacexbt",
   tagline:
-    "Self-taught dev. On-chain research. Building with Claude Code and Kimi.",
+    "Self-taught dev. Onchain research. Building with Claude Code and Kimi.",
   description:
-    "Projects, tools and airdrop farms by spacexbt, a self-taught developer and on-chain researcher.",
+    "Projects, tools and airdrop farms by spacexbt, a self-taught developer and onchain researcher.",
   url: "https://spacexbt.vercel.app", // replace when a custom domain exists
   links: {
     x: "https://x.com/spacexbt",

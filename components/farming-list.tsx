@@ -52,7 +52,7 @@ function FarmRow({ farm }: { farm: Farm }) {
             href={farm.referral}
             className="mt-2 inline-flex font-mono text-xs font-medium text-accent hover:underline"
           >
-            Join with my referral link ↗
+            Join {farm.name} ↗
           </ExternalLink>
         )}
       </div>

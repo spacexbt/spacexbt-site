@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/section-heading";
 
-export const TOOLS = ["Claude Code", "Kimi", "TypeScript", "Python", "Foundry"];
+const TOOLS = ["Claude Code", "Kimi", "TypeScript", "Python", "Foundry"];
 
 export function About() {
   return (
@@ -20,7 +20,7 @@ export function About() {
             />
             <div className="space-y-4" data-reveal>
               <p>
-                I&apos;m spacexbt, a self-taught developer and on-chain
+                I&apos;m spacexbt, a self-taught developer and onchain
                 researcher. I build tools that turn noisy market data into
                 something readable: sentiment trackers, alerting systems, data
                 pipelines and dashboards.
@@ -31,8 +31,8 @@ export function About() {
                 things, in public.
               </p>
               <p>
-                On X and Telegram I share on-chain research, token deep-dives
-                and smart contract security notes.
+                On X and Telegram I share onchain research, token deep-dives and
+                smart contract security notes.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2" data-reveal>
