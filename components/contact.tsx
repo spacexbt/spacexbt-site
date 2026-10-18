@@ -24,8 +24,9 @@ export function Contact() {
             id="contact-heading"
           />
           <p className="text-muted">
-            The fastest way to reach me is a DM on X. For updates and research,
-            join the Telegram channel.
+            The fastest way to reach me is a DM on X or Telegram. The Telegram
+            channel is where I share research and thoughts, so DMs there
+            won&apos;t reach me.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <ExternalLink href={site.links.x} className={row}>
@@ -37,13 +38,27 @@ export function Contact() {
                 <span className="font-mono text-xs text-muted">DMs open</span>
               </span>
             </ExternalLink>
-            <ExternalLink href={site.links.telegram} className={row}>
+            <ExternalLink href={site.links.telegramDm} className={row}>
+              <TelegramIcon className="h-5 w-5 shrink-0" />
+              <span className="flex flex-col">
+                <span className="font-medium">
+                  {handleFromUrl(site.links.telegramDm)}
+                </span>
+                <span className="font-mono text-xs text-muted">DMs open</span>
+              </span>
+            </ExternalLink>
+            <ExternalLink
+              href={site.links.telegram}
+              className={`${row} sm:col-span-2`}
+            >
               <TelegramIcon className="h-5 w-5 shrink-0" />
               <span className="flex flex-col">
                 <span className="font-medium">
                   {handleFromUrl(site.links.telegram)}
                 </span>
-                <span className="font-mono text-xs text-muted">Channel</span>
+                <span className="font-mono text-xs text-muted">
+                  Channel, updates only
+                </span>
               </span>
             </ExternalLink>
           </div>

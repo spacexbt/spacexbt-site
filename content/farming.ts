@@ -8,7 +8,10 @@ export const farms: Farm[] = parseFarms([
     url: "https://docs.metric.xyz",
     chains: ["Ethereum", "BNB Chain", "Robinhood Chain"],
     status: "active",
-    note: "DEX for active pools — oracle-guided and PropAMM liquidity.",
+    logo: "/farms/metric.png",
+    logoMono: true,
+    referral: "https://app.metric.xyz/r/code",
+    note: "DEX for active pools: oracle-guided and PropAMM liquidity.",
     since: "2026-10",
   },
 ]);

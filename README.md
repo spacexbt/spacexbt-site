@@ -77,6 +77,8 @@ Open `content/farming.ts`. Add an object to the list inside `parseFarms([ ... ])
   chains: ["Ethereum", "Robinhood Chain"], // required. at least one
   status: "active",               // required. "active" | "ended"
   logo: "/farms/protocol-name.svg", // optional. see below
+  logoMono: true,                 // optional. set for one-colour dark logos so they flip to white in dark mode
+  referral: "https://app.example.xyz/r/yourcode", // optional. shown as "Join with my referral link"
   note: "One-liner.",             // optional. max 100 characters
   since: "2026-10",               // optional. format YYYY-MM
 },
@@ -88,7 +90,7 @@ Open `content/farming.ts`. Add an object to the list inside `parseFarms([ ... ])
 
 **Bump the update date:** every time you change the farm list, update `farmingUpdatedAt` at the top of `content/farming.ts` to the current month, for example `"2026-11"`. That date is shown on the site as "last updated".
 
-Keep wallet addresses, amounts and referral links out of this file.
+Keep wallet addresses and amounts out of this file. Referral links go only in the `referral` field, which the site labels as a referral.
 
 ## 4. Change links (X, Telegram, GitHub)
 
@@ -97,12 +99,13 @@ Open `content/site.ts` and edit the `links` block:
 ```ts
 links: {
   x: "https://x.com/spacexbt",
-  telegram: "https://t.me/spaceinsights",
+  telegram: "https://t.me/spaceinsights",   // channel (updates only)
+  telegramDm: "https://t.me/highvolume",   // personal account for DMs
   github: "https://github.com/spacexbt",
 },
 ```
 
-A GitHub link containing `REPLACE_ME` is hidden (footer), and so are project links (Visit, GitHub, Thread). The X and Telegram links are always shown, so keep them real. The same file holds the tagline, description and `url` (the site address, used for canonical links, the sitemap and share previews).
+A GitHub link containing `REPLACE_ME` is hidden (footer), and so are project links (Visit, GitHub, Thread). The X and both Telegram links are always shown, so keep them real. The same file holds the tagline, description and `url` (the site address, used for canonical links, the sitemap and share previews).
 
 ## 5. How deploys work
 

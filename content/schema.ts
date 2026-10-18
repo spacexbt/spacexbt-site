@@ -28,6 +28,8 @@ export const farmSchema = z.strictObject({
   chains: z.array(z.string().min(1)).min(1),
   status: z.enum(["active", "ended"]),
   logo: z.string().startsWith("/farms/").optional(),
+  logoMono: z.boolean().optional(),
+  referral: z.httpUrl().optional(),
   note: z.string().max(100).optional(),
   since: yearMonthSchema.optional(),
 });
@@ -41,6 +43,7 @@ export const siteSchema = z.strictObject({
   links: z.strictObject({
     x: z.httpUrl(),
     telegram: z.httpUrl(),
+    telegramDm: z.httpUrl(),
     github: z.httpUrl(),
   }),
   buildsWith: z.array(z.string().min(1)).min(1),

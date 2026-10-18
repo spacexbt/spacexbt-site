@@ -10,7 +10,7 @@ const jsonLd = {
   "@type": "Person",
   name: "spacexbt",
   url: site.url,
-  sameAs: [site.links.x, site.links.telegram],
+  sameAs: [site.links.x, site.links.telegramDm, site.links.telegram],
 };
 
 export default function Home() {

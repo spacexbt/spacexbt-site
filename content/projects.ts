@@ -5,7 +5,7 @@ export const projects: Project[] = parseProjects([
     slug: "reddit-radar",
     name: "The Ticker Radar",
     summary:
-      "A live front page of the stocks and crypto that Reddit and 4chan are talking about — mentions, buzz and sentiment across 15+ boards.",
+      "A live front page of the stocks and crypto that Reddit and 4chan are talking about: mentions, buzz and sentiment across 15+ boards.",
     status: "live",
     tags: ["Stocks", "Crypto", "Sentiment", "Live data"],
     stack: ["Next.js", "TypeScript", "Turso", "Vercel"],

@@ -76,17 +76,17 @@ function isTextFile(path) {
 const denylistPath = join(ROOT, ".privacy-denylist");
 if (!existsSync(denylistPath)) {
   fail(
-    "Missing .privacy-denylist — create it with one private term per line (it is gitignored).",
+    "Missing .privacy-denylist: create it with one private term per line (it is gitignored).",
   );
 }
 if (!existsSync(join(ROOT, ".next"))) {
-  fail("Missing .next/ — run `pnpm build` first.");
+  fail("Missing .next/: run `pnpm build` first.");
 }
 
 const terms = parseDenylist(readFileSync(denylistPath, "utf8"));
 if (terms.length === 0) {
   fail(
-    ".privacy-denylist has no terms (only blanks/comments) — add at least one private term per line.",
+    ".privacy-denylist has no terms (only blanks/comments). Add at least one private term per line.",
   );
 }
 

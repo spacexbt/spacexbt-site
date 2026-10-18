@@ -42,7 +42,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium hover:border-muted"
             >
               <TelegramIcon className="h-4 w-4" />
-              Telegram
+              Telegram channel
             </ExternalLink>
             <a
               href="#projects"

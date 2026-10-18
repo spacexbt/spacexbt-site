@@ -20,7 +20,7 @@ export function About() {
             />
             <div className="space-y-4">
               <p>
-                I&apos;m spacexbt — a self-taught developer and on-chain
+                I&apos;m spacexbt, a self-taught developer and on-chain
                 researcher. I build tools that turn noisy market data into
                 something readable: sentiment trackers, alerting systems, data
                 pipelines and dashboards.

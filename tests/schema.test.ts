@@ -76,6 +76,17 @@ describe("farm schema", () => {
   it("rejects note over 100 chars", () => {
     expect(() => parseFarms([validFarm({ note: "a".repeat(101) })])).toThrow();
   });
+  it("accepts a referral link and mono logo flag", () => {
+    const [farm] = parseFarms([
+      validFarm({ referral: "https://app.example.xyz/r/abc", logoMono: true }),
+    ]);
+    expect(farm.referral).toBe("https://app.example.xyz/r/abc");
+  });
+  it("rejects a referral that is not an http(s) URL", () => {
+    expect(() =>
+      parseFarms([validFarm({ referral: "app.example.xyz/r/abc" })]),
+    ).toThrow();
+  });
   it("rejects status paused", () => {
     expect(() => parseFarms([validFarm({ status: "paused" })])).toThrow();
   });
@@ -90,6 +101,7 @@ const validSite = (overrides: Record<string, unknown> = {}) => ({
   links: {
     x: "https://x.com/someone",
     telegram: "https://t.me/somechannel",
+    telegramDm: "https://t.me/someperson",
     github: "https://github.com/someone",
   },
   buildsWith: ["Tool"],

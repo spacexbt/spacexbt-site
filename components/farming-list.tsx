@@ -19,7 +19,7 @@ function FarmRow({ farm }: { farm: Farm }) {
           alt=""
           width={24}
           height={24}
-          className={`mt-0.5 h-6 w-6 rounded ${fade}`}
+          className={`mt-0.5 h-6 w-6 rounded ${farm.logoMono ? "dark:invert" : ""} ${fade}`}
         />
       ) : (
         <span
@@ -47,6 +47,14 @@ function FarmRow({ farm }: { farm: Farm }) {
           ))}
         </ul>
         {farm.note && <p className="mt-1.5 text-sm text-muted">{farm.note}</p>}
+        {farm.referral && (
+          <ExternalLink
+            href={farm.referral}
+            className="mt-2 inline-flex font-mono text-xs font-medium text-accent hover:underline"
+          >
+            Join with my referral link ↗
+          </ExternalLink>
+        )}
       </div>
       <ExternalLink
         href={farm.url}
@@ -77,7 +85,7 @@ export function FarmingList() {
             id="farming-heading"
           />
           <p className="text-muted">
-            Protocols I&apos;m currently farming. Not financial advice — do your
+            Protocols I&apos;m currently farming. Not financial advice, do your
             own research.
           </p>
           <ul className="mt-6 divide-y divide-border border-y border-border">

@@ -34,7 +34,7 @@ export function ProjectsSection() {
               href={site.links.x}
               className="flex items-center justify-center rounded-xl border border-dashed border-border p-6 text-center text-muted hover:border-muted hover:text-text md:col-span-2"
             >
-              More in the works — follow on X for updates.
+              More in the works. Follow on X for updates.
             </ExternalLink>
           )}
         </div>

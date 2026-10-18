@@ -11,7 +11,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "spacexbt", template: "%s — spacexbt" },
+  title: { default: "spacexbt", template: "%s | spacexbt" },
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: "spacexbt", url: site.url },
