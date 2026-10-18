@@ -7,7 +7,7 @@ type Props = {
 
 export function SectionHeading({ index, label, title, id }: Props) {
   return (
-    <div className="mb-8">
+    <div className="mb-8" data-reveal>
       <p className="font-mono text-xs font-medium uppercase tracking-wider text-muted">
         {index} / {label}
       </p>

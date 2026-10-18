@@ -22,7 +22,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted hover:text-text"
+                className="link-grow text-sm text-muted hover:text-text"
               >
                 {item.label}
               </a>

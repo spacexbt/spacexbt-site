@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { handleFromUrl } from "@/lib/content";
 
 const row =
-  "flex items-center gap-4 rounded-xl border border-border bg-surface p-4 hover:border-muted md:p-5";
+  "group flex items-center gap-4 rounded-xl border border-border bg-surface p-4 hover:border-muted md:p-5";
 
 export function Contact() {
   return (
@@ -28,8 +28,8 @@ export function Contact() {
             channel is where I share research and thoughts, so DMs there
             won&apos;t reach me.
           </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <ExternalLink href={site.links.x} className={row}>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2" data-reveal>
+            <ExternalLink href={site.links.x} className={row} data-spotlight>
               <XIcon className="h-5 w-5 shrink-0" />
               <span className="flex flex-col">
                 <span className="font-medium">
@@ -37,8 +37,18 @@ export function Contact() {
                 </span>
                 <span className="font-mono text-xs text-muted">DMs open</span>
               </span>
+              <span
+                aria-hidden="true"
+                className="ml-auto text-muted transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-text"
+              >
+                ↗
+              </span>
             </ExternalLink>
-            <ExternalLink href={site.links.telegramDm} className={row}>
+            <ExternalLink
+              href={site.links.telegramDm}
+              className={row}
+              data-spotlight
+            >
               <TelegramIcon className="h-5 w-5 shrink-0" />
               <span className="flex flex-col">
                 <span className="font-medium">
@@ -46,10 +56,17 @@ export function Contact() {
                 </span>
                 <span className="font-mono text-xs text-muted">DMs open</span>
               </span>
+              <span
+                aria-hidden="true"
+                className="ml-auto text-muted transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-text"
+              >
+                ↗
+              </span>
             </ExternalLink>
             <ExternalLink
               href={site.links.telegram}
               className={`${row} sm:col-span-2`}
+              data-spotlight
             >
               <TelegramIcon className="h-5 w-5 shrink-0" />
               <span className="flex flex-col">
@@ -59,6 +76,12 @@ export function Contact() {
                 <span className="font-mono text-xs text-muted">
                   Channel, updates only
                 </span>
+              </span>
+              <span
+                aria-hidden="true"
+                className="ml-auto text-muted transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-text"
+              >
+                ↗
               </span>
             </ExternalLink>
           </div>

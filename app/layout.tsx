@@ -4,10 +4,12 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { MotionEffects } from "@/components/motion-effects";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/content/site";
 import { handleFromUrl } from "@/lib/content";
 import "./globals.css";
+import "./motion.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -40,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           {children}
           <Footer />
+          <MotionEffects />
         </ThemeProvider>
         {process.env.VERCEL ? <Analytics /> : null}
       </body>

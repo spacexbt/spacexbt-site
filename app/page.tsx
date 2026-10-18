@@ -2,6 +2,7 @@ import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { FarmingList } from "@/components/farming-list";
 import { Hero } from "@/components/hero";
+import { Marquee } from "@/components/marquee";
 import { ProjectsSection } from "@/components/projects-section";
 import { site } from "@/content/site";
 
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <Marquee />
       <ProjectsSection />
       <FarmingList />
       <About />

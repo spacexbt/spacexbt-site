@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { sortProjects } from "@/lib/content";
+import { delay } from "@/lib/motion";
 
 export function ProjectsSection() {
   const sorted = sortProjects(projects);
@@ -22,16 +23,20 @@ export function ProjectsSection() {
           id="projects-heading"
         />
         <div className="grid gap-4 md:grid-cols-2">
-          {sorted.map((project) => (
+          {sorted.map((project, i) => (
             <ProjectCard
               key={project.slug}
               project={project}
               featured={Boolean(project.featured)}
+              revealDelay={i * 80}
             />
           ))}
           {sorted.length < 2 && (
             <ExternalLink
               href={site.links.x}
+              data-reveal
+              data-spotlight
+              style={delay(sorted.length * 80)}
               className="flex items-center justify-center rounded-xl border border-dashed border-border p-6 text-center text-muted hover:border-muted hover:text-text md:col-span-2"
             >
               More in the works. Follow on X for updates.

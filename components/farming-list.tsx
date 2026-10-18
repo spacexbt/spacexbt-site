@@ -59,9 +59,11 @@ function FarmRow({ farm }: { farm: Farm }) {
       <ExternalLink
         href={farm.url}
         aria-label={`${farm.name} (opens in new tab)`}
-        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-muted hover:text-text"
+        className="group inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-muted hover:text-text"
       >
-        ↗
+        <span className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+          ↗
+        </span>
       </ExternalLink>
     </li>
   );
@@ -88,7 +90,10 @@ export function FarmingList() {
             Protocols I&apos;m currently farming. Not financial advice, do your
             own research.
           </p>
-          <ul className="mt-6 divide-y divide-border border-y border-border">
+          <ul
+            data-reveal
+            className="mt-6 divide-y divide-border border-y border-border"
+          >
             {active.map((farm) => (
               <FarmRow key={farm.name} farm={farm} />
             ))}

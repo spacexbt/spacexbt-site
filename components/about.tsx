@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/section-heading";
 
-const tools = ["Claude Code", "Kimi", "TypeScript", "Python", "Foundry"];
+export const TOOLS = ["Claude Code", "Kimi", "TypeScript", "Python", "Foundry"];
 
 export function About() {
   return (
@@ -18,7 +18,7 @@ export function About() {
               title="About"
               id="about-heading"
             />
-            <div className="space-y-4">
+            <div className="space-y-4" data-reveal>
               <p>
                 I&apos;m spacexbt, a self-taught developer and on-chain
                 researcher. I build tools that turn noisy market data into
@@ -35,12 +35,12 @@ export function About() {
                 and smart contract security notes.
               </p>
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-2">
+            <div className="mt-6 flex flex-wrap items-center gap-2" data-reveal>
               <span className="mr-1 font-mono text-xs font-medium uppercase text-muted">
                 Tools
               </span>
               <ul className="flex flex-wrap gap-2" aria-label="Tools">
-                {tools.map((tool) => (
+                {TOOLS.map((tool) => (
                   <li
                     key={tool}
                     className="rounded-md border border-border px-2 py-0.5 font-mono text-xs font-medium text-muted"

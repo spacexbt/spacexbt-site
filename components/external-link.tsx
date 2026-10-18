@@ -1,21 +1,14 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-type Props = {
+type Props = Omit<ComponentPropsWithoutRef<"a">, "target" | "rel"> & {
   href: string;
-  className?: string;
-  "aria-label"?: string;
-  children: ReactNode;
+  "data-reveal"?: boolean;
+  "data-spotlight"?: boolean;
 };
 
-export function ExternalLink({ href, className, children, ...rest }: Props) {
+export function ExternalLink({ href, children, ...rest }: Props) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-      {...rest}
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" {...rest}>
       {children}
       <span className="sr-only"> (opens in new tab)</span>
     </a>

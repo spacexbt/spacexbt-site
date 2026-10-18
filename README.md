@@ -198,7 +198,7 @@ If `.privacy-denylist` is missing the check fails. If it has no terms (empty or 
 Decisions made while building, one line each:
 
 - Project bodies render with `react-markdown`, with raw HTML disabled.
-- Section fade-in on scroll was skipped.
+- Motion is CSS only, with no animation library: hero entrance, drifting dot grid and glow, shimmer label, ticker strip, scroll reveals, cursor spotlight on cards, rotating border on featured projects and pulsing status dots. One small client component (`components/motion-effects.tsx`) handles scroll reveals and the spotlight. Styles live in `app/motion.css`. Everything stops when the visitor's system asks for reduced motion.
 - Ended farms use muted text at full opacity; only the logo and status dot fade, to keep WCAG AA contrast.
 - The header bottom border uses a CSS scroll-driven animation; in browsers without support it is always visible.
 - Vercel Analytics renders only on Vercel builds.

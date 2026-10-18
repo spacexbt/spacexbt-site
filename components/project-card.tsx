@@ -3,30 +3,38 @@ import { ProjectLinks } from "@/components/project-links";
 import { StatusBadge } from "@/components/status-badge";
 import type { Project } from "@/content/schema";
 import { publicAssetExists } from "@/lib/assets";
+import { delay } from "@/lib/motion";
 
 export function ProjectCard({
   project,
   featured,
+  revealDelay = 0,
 }: {
   project: Project;
   featured: boolean;
+  revealDelay?: number;
 }) {
   return (
     <article
-      className={`flex flex-col rounded-xl border border-border bg-surface p-5 hover:border-muted md:p-6 ${
-        featured ? "md:col-span-2" : ""
+      data-reveal
+      data-spotlight
+      style={delay(revealDelay)}
+      className={`group flex flex-col rounded-xl border border-border bg-surface p-5 hover:border-muted md:p-6 ${
+        featured ? "border-beam md:col-span-2" : ""
       }`}
     >
       {featured && publicAssetExists(project.image) && (
-        <Image
-          src={project.image}
-          alt={`Screenshot of ${project.name}`}
-          width={1600}
-          height={1000}
-          sizes="(min-width: 960px) 912px, 100vw"
-          preload
-          className="mb-5 aspect-[16/10] w-full rounded-lg border border-border object-cover object-top"
-        />
+        <div className="mb-5 overflow-hidden rounded-lg border border-border">
+          <Image
+            src={project.image}
+            alt={`Screenshot of ${project.name}`}
+            width={1600}
+            height={1000}
+            sizes="(min-width: 960px) 912px, 100vw"
+            preload
+            className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
       )}
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-semibold">{project.name}</h3>
