@@ -24,9 +24,7 @@ export function Contact() {
             id="contact-heading"
           />
           <p className="text-muted">
-            The fastest way to reach me is a DM on X or Telegram. The Telegram
-            channel is where I share research and thoughts, so DMs there
-            won&apos;t reach me.
+            The fastest way to reach me is a DM on X or Telegram.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2" data-reveal>
             <ExternalLink href={site.links.x} className={row} data-spotlight>

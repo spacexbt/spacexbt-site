@@ -31,8 +31,7 @@ export function About() {
                 things, in public.
               </p>
               <p>
-                On X and Telegram I share onchain research, token deep-dives and
-                smart contract security notes.
+                On X and Telegram I share onchain research and token deep-dives.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2" data-reveal>
